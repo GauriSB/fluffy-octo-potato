@@ -1,0 +1,180 @@
+package quiz;
+import java.util.Scanner;
+
+public class q_quiz
+{
+        String answer1 = "";
+        String answer2 = "";
+        String answer3 = "";
+        String answer4 = "";
+        String answer5 = "";
+
+        Scanner sc = new Scanner(System.in);
+
+         int numcorrect = 0;
+         int questions = 5;  
+         int attempted = 0; 
+         String conclusion=""; 
+         double grade=0; 
+
+      public void start()
+      {
+//----------------------Question 1---------------------------------- 
+              System.out.println("What is the sum of 2 and 2 ? ");
+              System.out.println("a: 1");
+              System.out.println("b: 2");  
+              System.out.println("c: 3");
+              System.out.println("d: 4");
+
+              answer1 = sc.nextLine();
+              
+              if(answer1.equals("a")||answer1.equals("b")||answer1.equals("c")||answer1.equals("d")) 
+           {
+               attempted +=1;
+              if(answer1.equals("d"))
+              {
+                  conclusion = conclusion +"Good job, question no. 1 is correct\n\n";
+                  numcorrect = numcorrect + 1;
+              }
+             else{
+                  conclusion = conclusion+"Question 1 wrong\n"+"your answer:"+answer1+"\tcorrect answer:d\n\n";
+             } 
+          }
+           else
+          {
+                conclusion = conclusion + "Question 1 entered invalid option..\n"+"\tcorrect answer:d\n\n";
+          }
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//----------------------Question 2---------------------------------- 
+              System.out.println("What is the name of Indias Iron Man? ");
+              System.out.println("a: Mahatma Gandhi");
+              System.out.println("b: Pandit Nehru");  
+              System.out.println("c: Sardar Vallabhbhai Patel");
+              System.out.println("d: no idea!");
+
+              answer2 = sc.nextLine();
+            if(answer2.equals("a")||answer2.equals("b")||answer2.equals("c")||answer2.equals("d")) 
+            { 
+              attempted += 1;  
+              if(answer2.equals("c"))
+              {
+                  conclusion = conclusion +"Good job, question no. 2 is correct\n\n";
+                  numcorrect = numcorrect + 1;
+              }
+             else{
+                  conclusion= conclusion+"Question 2 wrong\n"+"your answer:"+answer2+"\tcorrect answer:c\n\n";
+             } 
+
+            }
+       else
+          {
+               conclusion = conclusion + "Question 2 entered invalid option..\n"+"\tcorrect answer:c\n\n"; 
+          }
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//----------------------Question 3--------------------------------- 
+              System.out.println("Who is current Prime Minister of India? ");
+              System.out.println("a: Narendra Modi");
+              System.out.println("b: Ramnath Kovind");  
+              System.out.println("c: Arvind Kejrivwal");
+              System.out.println("d: no idea!");
+
+              answer3 = sc.nextLine();
+              
+             if(answer3.equals("a")||answer3.equals("b")||answer3.equals("c")||answer4.equals("d"))   
+            {    
+              attempted += 1;
+             if(answer3.equals("a"))
+              {
+                  conclusion = conclusion +"Good job, question no. 3 is correct\n\n";
+                  numcorrect = numcorrect + 1;
+              }
+             else{
+                  conclusion= conclusion+"Question 3 wrong\n"+"your answer:"+answer3+"\tcorrect answer:a\n\n";
+             } 
+         }
+          else
+          {
+              conclusion = conclusion + "Question 3 entered invalid option..\n"+"\tcorrect answer:a\n\n";
+          }
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//----------------------Question 4--------------------------------- 
+              System.out.println("Who is the India's Beauty Queen? ");
+              System.out.println("a: Deepika Padukone");
+              System.out.println("b: Manushi Chillar");  
+              System.out.println("c: Harnar Shindhu");
+              System.out.println("d: Aishwrya Rai");
+
+              answer4 = sc.nextLine();
+              
+        if(answer4.equals("a")||answer4.equals("b")||answer4.equals("c")||answer4.equals("d"))
+        {  
+             attempted += 1;
+            if(answer4.equals("c"))
+              {
+                  conclusion = conclusion +"Good job, question no. 4 is correct\n\n";
+                  numcorrect = numcorrect + 1;
+              }
+             else{
+                  conclusion = conclusion + "Question 4 wrong\n"+"your answer:"+answer4+"\tcorrect answer:c\n\n";
+             } 
+         }  
+        else{
+               conclusion = conclusion + "Question 4 entered invalid option..\n"+"\tcorrect answer:c\n\n"; 
+          }
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+       //----------------------Question 5--------------------------------- 
+              System.out.println("Is Java an interpreted Language? ");
+              System.out.println("a: Yes");
+              System.out.println("b: No");  
+              System.out.println("c: May be");
+              System.out.println("d: Both a and b");
+
+              answer5 = sc.nextLine();
+           if(answer5.equals("a")||answer5.equals("b")||answer5.equals("c")||answer5.equals("d")) 
+           {
+              attempted += 1;
+             if(answer5.equals("a"))
+              {
+                  conclusion = conclusion +"Good job, question no. 5 is correct\n\n";
+                  numcorrect = numcorrect + 1;
+              }
+             else
+             {
+               conclusion = conclusion+"Question 5 wrong\n"+"your answer:"+answer5+"\tcorrect answer:a\n\n";
+             } 
+           }
+          else
+           {
+              conclusion = conclusion + "Question 5 entered invalid option..\n"+"\tcorrect answer:a\n\n";
+           }
+ }
+  public void result()
+  {
+            System.out.println("==========REMARKS==========");
+            System.out.println(conclusion);
+             
+            grade = numcorrect * 100 /questions ; 
+            System.out.println("Your score:" +grade);
+   }
+
+  public void class_pos()
+  {
+           int g= (int)grade;
+          switch(g/10)
+          {
+            case 9:
+            case 8:{System.out.println("You are passed with Distinction.."); break; }
+            case 7:{System.out.println("You are first class pass"); break; } 
+            case 6:
+            case 5:{System.out.println("You are second class pass"); break; }
+            case 4:
+            case 3:{System.out.println("You are passed"); break; } 
+            case 2:{System.out.println("You are passed just at boundary"); break; }
+            case 1:{System.out.println("Sorry, but you are failed!!!\nBetter Luck next time"); break; } 
+          } 
+  } 
+}
