@@ -9,12 +9,12 @@ USER:1>.check balance
 3>.user details
 4>.update mobile_no
 */
-#include<iostream>
+#include<iostream.h>
 #include<conio.h>
 
 int admin_pin=1111;
 
-using namespace std;
+
 class user
 {
    private:
