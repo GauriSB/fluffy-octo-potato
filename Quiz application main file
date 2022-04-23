@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+import quiz.q_quiz;
+
+class main_quiz
+{
+  public static void main(String args[])
+  {
+      Scanner sc = new Scanner(System.in);
+
+      q_quiz q1 = new q_quiz();
+      String i = "" ;
+      boolean b = false ;
+      System.out.println("\t=====WELCOME TO QUIZ=====\n"); 
+    
+       System.out.println("Enter y to start the quiz..");
+       i = sc.nextLine();  
+     
+     while(b==false)
+     {      
+       if(i.equals("y"))
+       { 
+         q1.start();
+       }
+       else
+       {
+         System.out.println("y not entered....");
+       }       
+     
+       System.out.println("Enter y to view results of the quiz..");
+       i = sc.nextLine();  
+       if(i.equals("y"))
+       { 
+         q1.result();
+       }
+       else
+       {
+         System.out.println("y not entered....");
+       }  
+
+       System.out.println("Enter y to to view your class");
+       i = sc.nextLine();  
+       if(i.equals("y"))
+       { 
+          q1.class_pos();
+       }
+       else
+       {
+         System.out.println("y not entered....");
+       }
+          System.out.println("Enter y to restart the quiz and n to exit from the application....");  
+          i = sc.nextLine();     
+          if(i.equals("y"))
+          {
+              b=false;
+          }
+          else {       
+                     System.out.println("Thanks for taking Quiz...GoodBye!!!");
+                     b=true;
+                   
+             }
+     }     
+  }
+}
